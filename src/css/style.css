@@ -33,6 +33,12 @@ main::after{
     font-size: 24px;
     color: #ffffff;
     line-height: 30px;
+    display: none;
+    animation: mudarDescricao 0.7s;
+}
+
+.descricao.ativa{
+    display: block;
 }
 
 .informacoes .botao-trailer{
@@ -43,14 +49,14 @@ main::after{
     font-size: 18px;
     font-weight: bold;
     cursor: pointer;
-    border-color: #1d8346;
+    border: 1;
     border-radius: 30px;
     text-transform: uppercase;
     transition: 0.5s all ease-in-out;
+    box-shadow: 0 0 20px #b62100;
 }
 
 .informacoes .botao-trailer:hover{
-    box-shadow: 0 0 10px #ad2f13;
     transform: scale(1.2);
 }
 

@@ -5,6 +5,7 @@ const modal = document.querySelector(".modal");
 const linkDoVideo = video.src;
 const botoesCarrossel = document.querySelectorAll('.botao');
 const imagens = document.querySelectorAll('.imagem');
+const descricao = document.querySelectorAll('.descricao');
 
 botaoTrailer.addEventListener("click", () => {
     alternarModal();
@@ -24,7 +25,10 @@ botoesCarrossel.forEach((botao, indice) => {
 
         esconderImagemAtiva();
         
+        esconderDescricaoAtiva();
+        
         mostrarImagemDeFundo(indice);
+
     })
 })
 
@@ -34,6 +38,7 @@ function alternarModal() {
 
 function mostrarImagemDeFundo(indice) {
     imagens[indice].classList.add('ativa');
+    descricao[indice].classList.add('ativa');
 }
 
 function selecionarBotaoCarrossel(botao) {
@@ -41,11 +46,16 @@ function selecionarBotaoCarrossel(botao) {
 }
 
 function esconderImagemAtiva() {
-    const imagemAtiva = document.querySelector('.ativa');
+    const imagemAtiva = document.querySelector('.ativa.imagem');
     imagemAtiva.classList.remove('ativa');
 }
 
 function desativarBotaoSelecionado() {
     const botaoSelecionado = document.querySelector('.selecionado');
     botaoSelecionado.classList.remove('selecionado');
+}
+
+function esconderDescricaoAtiva() {
+    const descricaoAtiva = document.querySelector('.ativa.descricao');
+    descricaoAtiva.classList.remove('ativa');
 }
